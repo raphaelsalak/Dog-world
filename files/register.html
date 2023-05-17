@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Sign Up</title>
+	<!-- Latest compiled and minified CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+   $(document).ready(function(){
+    $( "#header" ).load( "../files/header.html" );
+   });
+</script>
+</head>
+
+<body>
+<div id="header"></div>
+	
+<div class="container" >
+<div class="row justify-content-center">
+<div>
+<div class="mt-3"><h3>Enter your information:</h3></div>
+<p><small>Disclaimer: Please do not use real emails or passwords. This is a school project.</small></p>
+<form action="test.php" method="post">
+	<div class=" col-sm-4 mb-3 mt-3">
+    	<label for="fname" class="col-form-label">First Name:</label>
+    	<input type="text" class="form-control form-control-sm" id="fname"  name="firstName" required>
+  	</div>
+	<div class=" col-sm-4 mb-3">
+    	<label for="lname" class="col-form-label">Last Name:</label>
+    	<input type="text" class="form-control form-control-sm" id="lname"  name="lastName" required>
+  	</div>
+	<div class=" col-sm-4 mb-3">
+    	<label for="mobile" class="col-form-label">Phone Number:</label>
+    	<input type="text" class="form-control form-control-sm" id="mobile"  name="mobile" required>
+  	</div>
+  	<div class="col-sm-4 mb-3">
+   		<label for="email" class="col-form-label">Email:</label>
+    	<input type="email" class="form-control form-control-sm" id="email"  name="email" required>
+  	</div>
+  	<div class=" col-sm-4 mb-3">
+    	<label for="pwd" class="col-form-label">Password:</label>
+    	<input type="password" class="form-control form-control-sm" id="pwd"  name="password" required>
+  	</div>
+  	<div class=" col-sm-4 mb-3">
+    	<label for="pwd2" class="col-form-label">Re-enter Password:</label>
+    	<input type="password" class="form-control form-control-sm" id="pwd2" name="password2" required>
+  	</div>
+	
+  	<button type="submit" class="btn btn-primary">Submit</button>
+</form>
+	<div id="registerAlert"></div>
+
+</div>
+</div>
+</div>	
+	
+	
+<!--	<h3>Enter your information:</h3>
+	<form action="test.php" method="post">
+	First Name: <input type="text" name="firstName" required><br><br>
+	Last Name: <input type="text" name="lastName" required><br><br>
+	E-mail: <input type="email" name="email" required><br><br>
+	Phone Number: <input type="text" name="mobile" required><br><br>
+	Password: <input type="password" name="password" required><br><br>
+	Confirm Password: <input  type="password" name="password2" required><br><br>
+-->
+</body>
+</html>

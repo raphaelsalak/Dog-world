@@ -1,0 +1,17 @@
+{"Items" : 
+[
+   {"Name":"Dog","Color":"Color", "Breed":"Breed", "imgpath":"https://ggsc.s3.amazonaws.com/images/uploads/The_Science-Backed_Benefits_of_Being_a_Dog_Owner.jpg"},
+	{"Name":"pugly","Color":"White","Breed":"Pug", "imgpath":"https://post.healthline.com/wp-content/uploads/2020/08/3180-Pug_green_grass-732x549-thumbnail-732x549.jpg"},
+	{"Name":"Doger","Color":"Orange-White", "Breed":"Helicopter", "imgpath":"https://www.gannett-cdn.com/media/2021/06/03/USATODAY/usatsports/imageForEntry18-8on.jpg?width=2560"},
+	{"Name":"Elon","Color":"Gold", "Breed":"Doge", "imgpath":"https://cdn.vox-cdn.com/thumbor/ByCzLV-FK04btA7bxc_pr5Pory4=/0x0:560x345/1200x800/filters:focal(236x129:324x217)/cdn.vox-cdn.com/uploads/chorus_image/image/69137452/Dogecoin_logo.0.png"},
+	{"Name":"Sasha","Color":"Black", "Breed":"Lab", "imgpath":"https://www.guidedogs.org/wp-content/uploads/2021/11/01.11.2021_SGD1014-Edit-scaled.jpg"},
+	{"Name":"Airbud","Color":"Orange", "Breed":"Monster", "imgpath":"https://eugeneweekly.com/wp-content/uploads/2020/08/20200820pets-1-lede-1300x844.jpg"},
+	{"Name":"Dog Ross","Color":"Happy", "Breed":"Painter", "imgpath":"https://i.imgur.com/ybq6WjN.jpg"},
+	{"Name":"Scooby Doo","Color":"Brown", "Breed":"Great Dane", "imgpath":"https://variety.com/wp-content/uploads/2019/06/scoob.jpg?w=681&h=383&crop=1"},
+	{"Name":"Sputnik","Color":"Light-Brown", "Breed":"Baloon", "imgpath":"https://static.boredpanda.com/blog/wp-content/uploads/2018/07/funny-dog-balloons-ceiling-fb__700-png.jpg"},
+	{"Name":"Debroah","Color":"Color", "Breed":"Breed", "imgpath":"https://i.etsystatic.com/22338666/r/il/0f3c19/3553678582/il_340x270.3553678582_2zg3.jpg"},
+	{"Name":"Snoop Dog","Color":"", "Breed":"Rapper", "imgpath":"https://cdn.britannica.com/73/135873-050-735FEF6E/Snoop-Dogg-2008.jpg?w=400&h=300&c=crop"},
+	{"Name":"Dog?","Color":"Golden", "Breed":"Dird", "imgpath":"https://i.pinimg.com/originals/4a/be/77/4abe7758a066606a9359f388fb98c232.jpg"},
+	{"Name":"Dog","Color":"Color", "Breed":"Breed", "imgpath":"https://www.pngitem.com/pimgs/m/156-1564428_dank-meme-dankememe-dankmemes-yeet-dog-watermelon-watermelon.png"}
+ ]
+}

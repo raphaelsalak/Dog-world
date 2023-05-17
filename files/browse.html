@@ -1,0 +1,302 @@
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8">
+<title>Browse Catalog</title>
+
+	
+	
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+   $(document).ready(function(){
+    $( "#header" ).load( "../files/header.html" );
+	openNav();
+   });
+</script>
+<style>
+	
+.gItem{
+	background-color: rgba(100, 100, 175, 0.8)
+}
+.gItem2{
+	background-color: rgba(125, 125, 200, 1);
+	border: 3px solid rgba(0, 0, 0, 0.8);
+	padding: 10px;
+}
+.grid-container {
+  background-color: rgba(155, 155, 240, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 10px;
+}
+
+ /* The side navigation menu */
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  /*background-color: #111; /* Black*/
+	background-color: #FFF; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav p {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  /*color: #818181;*/
+	color: #000000;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s;
+  padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+</style>
+</head>
+<body>
+
+	<div id="header"></div>
+ <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <p>Sex</p>
+  <p>Color</p>
+  <p>Breed</p>
+</div>
+
+<!-- Use any element to open the sidenav -->
+<span onclick="openNav()">open</span>
+
+<!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+<div id="main">
+  
+	<div class="container-fluid">
+	<h1>Browse</h1>
+	<p>Basic Description</p>
+	<p>This page should allow user to veiw all  items on the website and be able to click on each one to go the item details.<br> a great deal of effort will be spent on making this page look nice</p>
+	<br><br>
+	<p> We'll probably want to make the view cart an icon on a topbar or side bar instead of a button</p>
+	<a href="viewCart.html"><button class="Next">View Cart</button></a>
+
+
+	<br><br>
+	<div class="container-fluid">
+		<div class="row">
+			<!--
+			<div class="col-sm-12 col-md-12 col-lg-4 col-xl-4">
+				<div class="container-fluid">
+					<div class="row">
+				Side Filter Here
+			</div>
+			!-->
+			
+			<div class="col-sm-12 col-md-10 col-lg-7 col-xl-7">
+				<input class="form-control me-2" id="searchBar" type="search" placeholder="Search" aria-label="Search">	
+			</div>
+			<div class="col-sm-4 col-md-4 col-lg-1 col-xl-1">
+				<button id="btnSearch" onclick="Search()" >Search</button>
+			</div>
+		</div>
+	</div>
+	<br>
+	<script>
+		/* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
+		function openNav() {
+		  document.getElementById("mySidenav").style.width = "250px";
+		  document.getElementById("main").style.marginLeft = "250px";
+		}
+
+		/* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+		function closeNav() {
+		  document.getElementById("mySidenav").style.width = "0";
+		  document.getElementById("main").style.marginLeft = "0";
+		} 
+		
+		function Search(){
+			sBar = document.getElementById("searchBar")
+			sessionStorage.setItem("Search",
+				 JSON.stringify( [["IN", "NAME" , sBar.value]]
+						
+				 )
+			);
+			console.log(["IN", "NAME" , sBar.value])
+			location.reload();
+		}
+		
+		function FieldMatch(fMatch,fieldS){
+			switch(fMatch){
+				case "NAME":
+					console.log("NAME Match")
+					fVar = fieldS.Name.toUpperCase()
+					break;
+				case "BREED":
+					fVar = fieldS.Breed.toUpperCase()
+					break;
+				case "COLOR":
+					fVar = fieldS.color.toUpperCase()
+					break;
+				case "SEX":
+					//need to update this later
+					fVar = fieldS.color.toUpperCase()
+					break;
+				default:
+					console.log("Invalid Search Field")
+					break;
+			}
+			return(fVar);
+		}
+		
+		function FunctionMatch(fVar,fFunc,searchText){
+			switch(fFunc){
+				
+				case "IS":
+					if( fVar = searchText.toUpperCase() ){
+						console.log("IS Match")
+						console.log(fVar +" = " + searchText)
+						return(true);
+						break;
+					}
+					else {return(false)}
+					break;
+					
+					case "IN":
+					if( fVar.includes(searchText.toUpperCase() ) ){
+						console.log("IN Match")
+						console.log(fVar +" in " + searchText)
+						return(true);
+						break;
+					}
+					else {return(false)}
+					break;
+				
+				case "Count":
+					break;
+				
+				case "NOT IS":
+					return( FunctionMatch(fVar,"NOT " + fFunc ,searchText) )
+					
+				case "NOT IN":
+					return( FunctionMatch(fVar,"NOT " + fFunc ,searchText) )
+				
+				default:
+					console.log("Invalid Search Code")
+					return (false);
+					break;
+				
+			}
+		}
+		
+	</script>
+	
+	<template id="Item_Template">
+		<div class="col-sm-12 col-md-6 col-lg-4 col-xl-2" >
+			<a id ="linkwhenClicked" href="itemDetails.php" style="color:#000000; text-decoration:none;">
+				<div class="gItem">
+					<div class="gItem2">
+						<table>
+							<tr>
+								<td><div class="thumbnail">
+								<img id="imgO" src="https://ggsc.s3.amazonaws.com/images/uploads/The_Science-Backed_Benefits_of_Being_a_Dog_Owner.jpg" width="100%" height="100%" alt="Pic">
+							</div></td>
+							</tr><tr>
+								<td>
+									<tr><td id="iName">Dog</td></tr>
+									<tr><td id="iColorBreed">Color Breed</td></tr>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</a>
+			</div>
+	</template>
+
+	<div class="container-fluid">
+	<div class="grid-container" id="gridC">
+	<div class="row" id="trueRow">		
+	</div></div></div>
+	<!-- load json and clone template for each value !-->
+	
+	<script>
+	try{
+		//Loading the actual json test file is a pain. This is dumb, dumb, dumb to write it out as text, but this is temporary, I don't want to deal with Node.js for Require or worry about serving the file right now. The try exists solely for dreamWiever to collapse the code.
+		try{
+		jsonStringData='{"Items" : [{"Name":"Dog","Color":"Color","Breed":"Breed", "imgpath":"https://ggsc.s3.amazonaws.com/images/uploads/The_Science-Backed_Benefits_of_Being_a_Dog_Owner.jpg"},{"Name":"Pugly","Color":"White","Breed":"Pug", "imgpath":"https://post.healthline.com/wp-content/uploads/2020/08/3180-Pug_green_grass-732x549-thumbnail-732x549.jpg"},{"Name":"Doger","Color":"Orange-White", "Breed":"Helicopter", "imgpath":"https://www.gannett-cdn.com/media/2021/06/03/USATODAY/usatsports/imageForEntry18-8on.jpg?width=2560"},{"Name":"Elon","Color":"Gold", "Breed":"Doge", "imgpath":"https://cdn.vox-cdn.com/thumbor/ByCzLV-FK04btA7bxc_pr5Pory4=/0x0:560x345/1200x800/filters:focal(236x129:324x217)/cdn.vox-cdn.com/uploads/chorus_image/image/69137452/Dogecoin_logo.0.png"},{"Name":"Sasha","Color":"Black", "Breed":"Lab", "imgpath":"https://www.guidedogs.org/wp-content/uploads/2021/11/01.11.2021_SGD1014-Edit-scaled.jpg"},{"Name":"Airbud","Color":"Orange", "Breed":"Monster", "imgpath":"https://eugeneweekly.com/wp-content/uploads/2020/08/20200820pets-1-lede-1300x844.jpg"},{"Name":"Dog Ross","Color":"Happy", "Breed":"Painter", "imgpath":"https://i.imgur.com/ybq6WjN.jpg"},{"Name":"Scooby Doo","Color":"Brown", "Breed":"Great Dane", "imgpath":"https://variety.com/wp-content/uploads/2019/06/scoob.jpg?w=681&h=383&crop=1"},{"Name":"Sputnik","Color":"Light-Brown", "Breed":"Baloon", "imgpath":"https://static.boredpanda.com/blog/wp-content/uploads/2018/07/funny-dog-balloons-ceiling-fb__700-png.jpg"},{"Name":"Debroah","Color":"Color", "Breed":"Breed", "imgpath":"https://i.etsystatic.com/22338666/r/il/0f3c19/3553678582/il_340x270.3553678582_2zg3.jpg"},{"Name":"Snoop Dog","Color":"", "Breed":"Rapper", "imgpath":"https://cdn.britannica.com/73/135873-050-735FEF6E/Snoop-Dogg-2008.jpg?w=400&h=300&c=crop"},{"Name":"Dog?","Color":"Golden", "Breed":"Dird", "imgpath":"https://i.pinimg.com/originals/4a/be/77/4abe7758a066606a9359f388fb98c232.jpg"},{"Name":"Dog","Color":"Color", "Breed":"Breed", "imgpath":"https://www.pngitem.com/pimgs/m/156-1564428_dank-meme-dankememe-dankmemes-yeet-dog-watermelon-watermelon.png"},{"Name":"Dog","Color":"Color", "Breed":"Husky", "imgpath":"https://memegenerator.net/img/images/2664327.jpg"},{"Name":"Dog","Color":"Color", "Breed":"Husky", "imgpath":"https://dogsrealty.com/wp-content/uploads/2019/07/PIXAR.jpg"}]}'
+		}catch(e) {alert(e);}
+		const jsonObj = JSON.parse(jsonStringData);
+		//var tbody = document.querySelector("#gridC");
+		var tbody = document.querySelector("#trueRow");
+    	var template = document.querySelector('#Item_Template');
+		var isSMatch = true
+  		
+		for (let dogitem = 0; dogitem < jsonObj.Items.length; dogitem++) {
+			
+		if( sessionStorage.getItem("Search")!=null){
+			sFilter = JSON.parse(sessionStorage.getItem("Search"))
+			for(let i=0 ;i<Object.keys(sFilter).length ;i++){
+				item = sFilter[i];
+				fVar = FieldMatch(item[1],jsonObj.Items[dogitem])
+				fFunc = item[0];
+				isSMatch = FunctionMatch(fVar,fFunc,item[2])
+
+			}
+
+		}
+			// Clone the new row and insert it into the table
+			if( isSMatch){
+				var clone = template.content.cloneNode(true);
+				var imgO = clone.getElementById("imgO");
+				var nameO = clone.getElementById("iName");
+				var cb = clone.getElementById("iColorBreed");
+				var lk = clone.getElementById("linkwhenClicked")
+				imgO.src=jsonObj.Items[dogitem].imgpath;
+				nameO.textContent = jsonObj.Items[dogitem].Name;
+				cb.textContent = jsonObj.Items[dogitem].Color +" " + jsonObj.Items[dogitem].Breed;
+				lk.onclick = function(){
+					console.log("lk")
+					sessionStorage.setItem("currentDog", jsonObj.Items[dogitem].Name);
+				}
+				
+				
+				tbody.appendChild(clone);
+			}
+			isSMatch = true;
+		}
+		//sessionStorage.removeItem("Search")
+	}catch(e) {alert(e);}
+	</script>
+
+
+	</div>
+</div> <!-- end side bar !-->
+</body>
+</html>

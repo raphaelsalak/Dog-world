@@ -1,0 +1,85 @@
+<!--<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Manage Items</title>
+</head>
+<body>
+
+ -->
+<div id="uniqueIdRef7349">
+<h1>Create Dog</h1>
+<div class="container-fluid" >
+	<div class="row">
+	<form action="manageItems.php" method="post" enctype="multipart/form-data" id="FormA">
+		<div class="mb-3 mt-3 ">
+			<label for="name" class="col-form-label">Dog Name:</label>
+			<input type="text" class="form-control form-control-sm" id="name"  name="name">
+		</div>
+		<div class="mb-3">
+			<label for="userID" class="col-form-label">User ID(ID number of who is adding a dog):</label>
+			<input type="text" class="form-control form-control-sm" id="userID"  name="userId">
+		</div>
+		<div class="mb-3">
+			<label for="breed" class="col-form-label">Breed:</label>
+			<input type="text" class="form-control form-control-sm" id="breed"  name="breed">
+		</div>
+		<div class="mb-3">
+			<label for="sex" class="col-form-label">Sex(M or F):</label>
+			<input type="text" class="form-control form-control-sm" id="sex"  name="sex">
+		</div>
+		<div class="mb-3">
+			<label for="color" class="col-form-label">Color:</label>
+			<input type="text" class="form-control form-control-sm" id="color"  name="color">
+		</div>
+		<div class="mb-3">
+			<label for="birthDt" class="col-form-label">Birth Date:</label>
+			<input type="date" class="form-control form-control-sm" id="birthDt" name="birthDt">
+		</div>
+		<div class="mb-3">
+			<label for="summary" class="col-form-label">Description:</label>
+			<input type="text" class="form-control form-control-sm" id="summary"  name="summary">
+		</div>
+		<div class="mb-3">
+			<label for="price" class="col-form-label">Price:</label>
+			<input type="number" class="form-control form-control-sm" id="price"  name="price">
+		</div>
+		<div class="mb-3">
+			<label for="discount" class="col-form-label">Discount:</label>
+			<input type="number" class="form-control form-control-sm" id="discount"  name="discount">
+		</div>
+		<div class="mb-3">
+			<label for="quantity" class="col-form-label">Quantity:</label>
+			<input type="number" class="form-control form-control-sm" id="quantity"  name="quantity">
+		</div>
+		<div class="mb-3">
+			<label for="slug" class="col-form-label">Slug:</label>
+			<input type="text" class="form-control form-control-sm" id="slug"  name="slug">
+		</div>
+		<div class="mb-3">
+			<label for="image" class="col-form-label">Path to web Image:</label>
+			<input type="text" class="form-control form-control-sm" id="image_path"  name="image_path">
+		</div>
+        <div class="mb-3">
+			<label for="size" class="col-form-label">Dog Size:</label>
+			<input type="text" class="form-control form-control-sm" id="size"  name="size">
+		</div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+		<br><br><a href="https://imgur.com/upload">Imgur Upload</a>
+	</form>
+</div>
+</div>
+</div>
+<script>
+	let cuId = sessionStorage.getItem("userID");
+	let uRef = document.querySelector("#uniqueIdRef7349");
+	let ele = uRef.querySelector("#userID");
+	ele.value = cuId;
+	console.log("id="+ele.value);
+</script>
+<!--	<script>
+	
+</div>
+</div>	
+</body>
+</html>-->
