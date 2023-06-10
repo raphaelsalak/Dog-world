@@ -1,4 +1,4 @@
-# Software Engineering 1 Project - Ecommerce Website
+# Software Engineering 1 Project - Ecommerce CRUD Website
 ### Position: Backend  
 ### My contribution 
 * PHP/SQL queries for user and order data to be displayed
